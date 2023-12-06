@@ -1,0 +1,248 @@
+body, html {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+        .navigation {
+            display: flex;
+            justify-content: center;
+            /* background-color: #132F4C; */
+            min-height: 25vh;
+            /* position: sticky;
+            top: 0;
+            z-index: 1000; */
+        }
+        .navigation a {
+            display: flex;
+            color: white;
+            font-size: 20px;
+            padding: 10px 15px;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+            align-items: center;
+        }
+        .navigation a:hover {
+            background-color: #1b3a5b54;
+            border-radius: 5px;
+        }
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .white-link {
+            color: white; /* Ustawia kolor tekstu na biały */
+            text-decoration: none; /* Usuwa podkreślenie */
+        }
+        .white-link:hover {
+            color: #007bff;
+            text-decoration: underline;
+        }
+        .fixed-background-home {
+            background-image: url('bg1.png');
+            background-size: cover; 
+            background-attachment: fixed;
+            background-position: center; 
+            min-height: 75vh; 
+            width: 100%; 
+        }
+        .fixed-background {
+            background-image: url('bg2.png');
+            background-size: cover; 
+            background-attachment: fixed;
+            background-position: center; 
+            min-height: 100vh; 
+            width: 100%; 
+        }
+        .section::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 45%; /*test1: 33.33*/
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        .home {
+            min-height: 75vh;
+            color: white;
+            /* background-color: transparent; on default?*/
+        }
+        .steps {
+            align-items: baseline;
+            justify-content: center;
+            color: white;
+            /* background-color: transparent; */
+        }
+        .home::before, .contact::before, .steps::before {
+            content: none;
+            /* background-size: 50%;
+            background-repeat: no-repeat; */
+        }
+        .home::before {
+            /*background-image: url('fig0.png');*/
+        }
+        .research::before {
+            background-image: url('fig1.jpg');
+        }
+        .steps::before {
+            /* background-image: url('fig2.png'); */
+        }
+        .teaching::before {
+            background-image: url('fig3.png');
+        }
+        .tutorials::before {
+            background-image: url('fig4.png');
+        }
+        .articles::before {
+            background-image: url('fig6.png');
+        }
+        .contact::before {
+            background-image: url('fig5.png');
+        }
+        .content {
+            width: 55%; /*test1: 66.67*/
+            padding-left: 45%; /*test1: 33.33*/
+            text-align: justify;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .home .content, .contact .content {
+            width: 100%;
+            padding-left: 0;
+            align-items: center;
+            text-align: center;
+        }
+        .steps .content {
+            width: 80%;
+            padding-left: 0;
+            align-items: flex-start;
+            text-align: center;
+        }
+        h1 {
+            color: #cb853f;
+            margin-top: -300px;
+            margin-left: 120px;
+            font-size: 4.25em;
+        }
+        h2 {
+            color: #cb853f;
+            margin-top: -300px;
+            margin-left: 120px;
+            font-size: 3em;
+        }
+        h3 {
+            font-size: 70px; 
+            margin-bottom: 0;
+        }
+        h4 {
+            font-size: 1.5em; 
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .home h1, .contact h2 {
+            color: white;
+            margin-left: 0;
+            font-family: "Pacifico", Sans-serif;
+            text-shadow: 0px -1px 32px white;
+        }
+        .steps h2 {
+            color: white;
+            font-size: 2.5em;
+            padding-top: 100px;
+            margin-top: 0;
+            margin-left: 20px;
+        }
+        p, .articles-list li {
+            margin-top: 30px;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        .home p, .contact p {
+            font-size: 24px;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+        }
+        .steps p {
+            font-size: 17px;
+        }
+        .research, .teaching, .tutorials, .articles, .contact {
+            color: black;
+            background-color: #fcf6ef;
+        }
+        /* .research .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
+        } */
+        .articles-list {
+            list-style-type: none;
+            padding: 0;
+            margin-left: 20px;
+        }
+        .articles-list li {
+            margin-bottom: 10px;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        .teaching-list {
+            list-style-type: none;
+            padding: 0;
+            margin-left: 20px;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: start;
+            margin-left: 20px;
+        }
+        .social-icons a {
+            color: white;
+            margin: 5px;
+            font-size: 24px;
+        }
+        .social-icons a:hover {
+            color: #007bff;
+        }
+        .steps-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            text-align: center;
+            color: white; 
+        }
+        .step-container {
+        flex-basis: 33%; 
+        margin: 0 0.5%;
+        }
+        .step-container p {
+            font-size: 17px;
+            margin-left: 10px;
+            margin-right: 10px;
+            text-align: left;
+        }
+        .description-text p{
+            max-width: 80%;
+            font-size: 17px;
+            margin-top: 15%;
+        }
+
+    @media (max-width: 768px) {
+            .steps-wrapper {
+                flex-direction: column;
+            }
+
+        .step-container {
+            flex-basis: auto;
+            width: 100%; /* Each step takes full width on smaller screens */
+            margin: 10px 0; /* Adjust margin for vertical layout */
+        }
+    }
