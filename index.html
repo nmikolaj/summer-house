@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+<div class="fixed-background-home">
+    <div class="navigation">
+        <a href="#home"><div class="navHover"><b>Home</b></div></a>
+        <a href="#offer"><div class="navHover"><b>Oferta</b></div></a>
+        <a href="#steps"><div class="navHover"><b>Jak zarezerwować</b></div></a>
+        <a href="#gallery"><div class="navHover"><b>Galeria</b></div></a>
+        <a href="#pricelist"><div class="navHover"><b>Cennik</b></div></a>
+        <a href="#location"><div class="navHover"><b>Lokalizacja</b></div></a>
+        <a href="#contact"><div class="navHover"><b>Kontakt</b></div></a>
+        <a href="#high-contrast" id="high-contrast-link"><b><span id="contrast-text" class="material-symbols-outlined">contrast</span></b></a>
+    </div>
+    <div class="section home" id="home">
+        <div class="content">
+            <h1>Home</h1>
+            <p>Domek letniskowy w Krakowie</p>
+            <a href="#booking" class="reserve-button">Zarezerwuj</a>
+        </div>
+    </div>
+</div>
+<div class="section offer" id="offer">
+    <div class="content">
+        <div class="offer-wrapper">
+            <h2 data-aos="fade-down">WYPOSAŻENIE:</h2>
+            <p data-aos="fade-left">
+                - WiFi<br>
+                - Kuchnia<br>
+                - Lodówka<br>
+                - Mikrofalówka<br>
+                - TV<br>
+                - Ręczniki<br>
+                - Suszarka do włosów<br>
+                - Darmowy Parking<br>
+                - Żelazko<br>
+                - Balkon<br>
+                - Czajnik
+            </p>
+            <h2 data-aos="fade-down">STRUKTURA:</h2>
+            <p data-aos="fade-left">
+                - domek 7-osobowy<br>
+                - łóżka podwójne: 3<br>
+                - rozkładana wersalka
+                </p>
+            <h2 data-aos="fade-down">WAŻNE INFORMACJE:</h2>
+            <p data-aos="fade-left">
+                Przyjazd od: 15:00<br>
+                Wyjazd do: 10:00
+            </p>
+        </div>
+    </div>
+</div>
+<div class="fixed-background">
+    <div class="section steps" id="steps">
+        <div class="content">
+            <h2 data-aos="fade-down">Jak przebiega rezerwacja?</h2>
+            <div class="steps-wrapper">
+                <div class="step-container" data-aos="fade-right">
+                <h3>1</h3>
+                <h4>Wybierz termin</h4>
+                <p>Termin oraz czas trwania rezerwacji możesz wybrać zgodnie z opcjami dostępnymi w systemie online.</p>
+                </div>
+                <div class="step-container" data-aos="fade-right">
+                <h3>2</h3>
+                <h4>Wypełnij dane</h4>
+                <p>Wypełnij krótki formularz Twoimi danymi kontaktowymi.</p>
+                </div>
+                <div class="step-container" data-aos="fade-right">
+                    <h3>3</h3>
+                    <h4>Opłać rezerwację</h4>
+                    <p>Rezerwację możesz opłacić za pomocą kodu Blik lub przelewem. Po dokonaniu płatności potwierdzenie rezerwacji zostanie wysłane na podany przez Ciebie e-mail.</p>
+                </div>
+            </div>
+            <div class="description-text">
+            <p><b>I gotowe! Możesz cieszyć się wypoczynkiem w domku letniskowym położonym w zielonej i spokojnej dzielnicy Zakopanego w otoczeniu modrzewi i świerków.</b></p>
+            <a href="#booking" class="reserve-button">Zarezerwuj</a> <!--oustide-->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section gallery" id="gallery">
+    <div class="content">
+        <h2 data-aos="fade-down">Galeria</h2>
+        <button class="gallery-button"><a src="gallery.html">Zobacz więcej</a></button>
+    </div>
+    <div class="slider">
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+    </div>
+</div>
+<div class="fixed-background">
+    <div class="section pricelist" id="pricelist">
+        <div class="content">
+            <h2 data-aos="fade-down">CENNIK 2023/2024</h2>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                    <tr>
+                        <th><button id="date">TERMIN</button></th>
+                        <th><button id="price1">ILOŚĆ OSÓB 1-4/doba</button></th>
+                        <th><button id="price2">ILOŚĆ OSÓB 5-7/doba</button></th>
+                    </tr>
+                    </thead>
+                    <tbody id="table-content"></tbody>
+                </table>
+            </div>
+            <a href="#booking" class="reserve-button">Zarezerwuj</a>
+        </div>
+    </div>
+</div>
+<div class="section location" id="location">
+    <div class="content">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7962.608155077408!2d19.92683078151711!3d50.0619053243026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b78a793af1f%3A0x93aec83b5969325d!2zxbthYmth!5e0!3m2!1spl!2spl!4v1702053899835!5m2!1spl!2spl" width=100% height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+<div class="section booking" id="booking">
+    <div class="content">
+        <h2>Zarezerwuj</h2>
+        <div id="container">
+            <div id="header">
+              <div id="monthDisplay"></div>
+              <div>
+                <button id="backButton">Poprzedni</button>
+                <button id="nextButton">Następny</button>
+              </div>
+            </div>
+            <div id="weekdays">
+              <div><b>Niedziela</b></div>
+              <div><b>Poniedziałek</b></div>
+              <div><b>Wtorek</b></div>
+              <div><b>Środa</b></div>
+              <div><b>Czwartek</b></div>
+              <div><b>Piątek</b></div>
+              <div><b>Sobota</b></div>
+            </div>
+            <div id="calendar"></div>
+            <button id="summaryButton" onclick="summary()">Przejdź do podsumowania</button>
+        </div>  
+    </div>
+</div>
+<div class="section contact" id="contact">
+    <div class="content">
+        <h2 data-aos="fade-up">Kontakt</h2>
+        <p>Podaj nam e-mail a wyślemy ci informacje o specjalnych ofertach!</p>
+	<div class="container">
+	<form onsubmit="target_popup(this)">
+		<p><label for="fname"><b>Please enter your email here:</b></label></p>
+        	<p><input type="email" id="email" name="email" required></p>
+        </form>
+		<p><input type="submit" value="Wyślij"></p>
+	</div>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/maciej-hendzel-843a568b/" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/MacieOk" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:maciej.hendzel@doctoral.uj.edu.pl" title="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=veLhHmsAAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar">
+                <i class="fas fa-graduation-cap"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
