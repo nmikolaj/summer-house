@@ -42,7 +42,7 @@ body, html {
             text-decoration: underline;
         }
         .fixed-background-home {
-            background-image: url('bg1.png');
+            background-image: url('images/bg1.png');
             background-size: cover; 
             background-attachment: fixed;
             background-position: center; 
@@ -50,7 +50,7 @@ body, html {
             width: 100%; 
         }
         .fixed-background {
-            background-image: url('bg2.jpg');
+            background-image: url('images/bg2.jpg');
             background-size: cover; 
             background-attachment: fixed;
             background-position: center; 
@@ -140,10 +140,10 @@ body, html {
             min-height: 450px;
         }
         .offer::before {
-            background-image: url('fig1.jpg');
+            background-image: url('images/fig1.jpg');
         }
         .gallery::before {
-            background-image: url('fig3.png');
+            background-image: url('images/fig1.jpg');
         }
         .content {
             width: 100%;
@@ -384,23 +384,23 @@ body, html {
             animation: slider 15s infinite;
         }
         .slider .slide:nth-child(1) {
-            background-image: url('slide1.jpeg');
+            background-image: url('images/slide1.jpeg');
             animation-delay: 0s;
         }  
         .slider .slide:nth-child(2) {
-            background-image: url('slide2.jpeg');
+            background-image: url('images/slide2.jpeg');
             animation-delay: -3s;
         }  
         .slider .slide:nth-child(3) {
-            background-image: url('slide3.jpg');
+            background-image: url('images/slide3.jpg');
             animation-delay: -6s;
         }
         .slider .slide:nth-child(4) {
-            background-image: url('slide4.jpg');
+            background-image: url('images/slide4.jpg');
             animation-delay: -9s;
         }  
         .slider .slide:nth-child(5) {
-            background-image: url('slide5.jpg');
+            background-image: url('images/slide5.jpg');
             animation-delay: -12s;
         }
         .table-container {
