@@ -13,7 +13,7 @@ const getBookedDates = async (req, res) => {
     }
 };
 
-const saveBookedDates = async (req, res) => {
+const bookDates = async (req, res) => {
     const { dates } = req.body;
     try {
         let booking = await Booking.findOne({});
@@ -29,4 +29,4 @@ const saveBookedDates = async (req, res) => {
     }
 };
 
-module.exports = { getBookedDates, saveBookedDates };
+module.exports = { getBookedDates, bookDates };

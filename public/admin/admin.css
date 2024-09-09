@@ -55,6 +55,11 @@ body {
     cursor: default;
 }
 
+.day.booked {
+    background-color: rgb(90, 90, 90);
+    color: white;
+}
+
 .day.highlighted {
     background-color: green;
     color: white;
