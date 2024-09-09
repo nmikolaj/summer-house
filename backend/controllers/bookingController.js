@@ -29,4 +29,28 @@ const bookDates = async (req, res) => {
     }
 };
 
-module.exports = { getBookedDates, bookDates };
+const deleteBookedDates = async (req, res) => {
+    const { dates } = req.body;
+    try {
+        let booking = await Booking.findOne({});
+        if (booking) {
+            const newBookedDates = booking.bookedDates.filter(date => !dates.includes(date));
+            if (newBookedDates.length !== booking.bookedDates.length) {
+                booking.bookedDates = newBookedDates;
+                await booking.save();
+                res.status(200).send('Dates deleted successfully');
+            } else {
+                res.status(404).json({ error: 'No matching dates found to delete' });
+            }
+        } else {
+            res.status(404).json({ error: 'No bookings found' });
+        }
+    } catch (error) {
+        console.error('Error deleting booked dates:', error);
+        res.status(500).json({ error: 'Error deleting booked dates' });
+    }
+};
+
+
+
+module.exports = { getBookedDates, bookDates, deleteBookedDates };

@@ -1,6 +1,7 @@
 let navMonth = 0;
 let clicked = null;
 let selectedDates = [];
+let datesToDelete = [];
 
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
@@ -60,10 +61,14 @@ async function loadCalendar() {
             }
 
             if (selectedDates.includes(dayString)) {
-                daySquare.classList.add('highlighted');
+                daySquare.classList.add('to-book');
             }
 
-            daySquare.addEventListener('click', () => toggleHighlight(dayString));
+            if (datesToDelete.includes(dayString)) {
+                daySquare.classList.add('to-delete');
+            }
+
+            daySquare.addEventListener('click', () => handleDateClick(dayString, bookedDates));
         } else {
             daySquare.classList.add('padding');
         }
@@ -72,10 +77,19 @@ async function loadCalendar() {
     }
 }
 
-function toggleHighlight(dayString) {
+// Determine whether clicked date is already booked
+function handleDateClick(dayString, bookedDates) {
+    if (bookedDates.includes(dayString)) {
+        toggleDeleteDate(dayString);
+    } else {
+        toggleBookDate(dayString);
+    }
+}
+
+function toggleBookDate(dayString) {
     const daySquare = document.querySelector(`.day[data-day='${dayString}']`);
     if (daySquare) {
-        daySquare.classList.toggle('highlighted');
+        daySquare.classList.toggle('to-book');
         if (selectedDates.includes(dayString)) {
             selectedDates = selectedDates.filter(date => date !== dayString);
         } else {
@@ -84,17 +98,19 @@ function toggleHighlight(dayString) {
     }
 }
 
-document.getElementById('nextButton').addEventListener('click', () => {
-    navMonth++;
-    loadCalendar();
-});
+function toggleDeleteDate(dayString) {
+    const daySquare = document.querySelector(`.day[data-day='${dayString}']`);
+    if (daySquare) {
+        daySquare.classList.toggle('to-delete');
+        if (datesToDelete.includes(dayString)) {
+            datesToDelete = datesToDelete.filter(date => date !== dayString);
+        } else {
+            datesToDelete.push(dayString);
+        }
+    }
+}
 
-document.getElementById('backButton').addEventListener('click', () => {
-    navMonth--;
-    loadCalendar();
-});
-
-// Save booked dates
+// Save selected dates to book
 document.getElementById('saveButton').addEventListener('click', async () => {
     await fetch('http://localhost:3000/api/book-dates', {
         method: 'POST',
@@ -102,7 +118,33 @@ document.getElementById('saveButton').addEventListener('click', async () => {
         body: JSON.stringify({ dates: selectedDates })
     });
     alert('Dates booked successfully');
-    selectedDates = []; // Clear selected dates after booking
+    selectedDates = [];
+    loadCalendar();
+});
+
+// Delete booked dates
+document.getElementById('deleteButton').addEventListener('click', async () => {
+    const response = await fetch('http://localhost:3000/api/delete-dates', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ dates: datesToDelete })
+    });
+    if (response.ok) {
+        alert('Dates deleted successfully');
+        datesToDelete = [];
+        loadCalendar();
+    } else {
+        alert('Error deleting dates');
+    }
+});
+
+document.getElementById('nextButton').addEventListener('click', () => {
+    navMonth++;
+    loadCalendar();
+});
+
+document.getElementById('backButton').addEventListener('click', () => {
+    navMonth--;
     loadCalendar();
 });
 
