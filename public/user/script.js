@@ -1,6 +1,6 @@
 // Pricelist init and sorting
 const response = {
-    "pokedata": [
+    "prices": [
        {
           "date": "FERIE ZIMOWE 2024<br>03.01-28.02.2024r",
           "price1": 1000,
@@ -96,16 +96,16 @@ const response = {
  };
  
  window.addEventListener("load", () => {
-   getTableContent(response.pokedata);
+   getTableContent(response.prices);
  
    [...tableButtons].map((button) => {
      button.addEventListener("click", (e) => {
        resetButtons(e);
        if (e.target.getAttribute("data-dir") == "desc") {
-         sortData(response.pokedata, e.target.id, "desc");
+         sortData(response.prices, e.target.id, "desc");
          e.target.setAttribute("data-dir", "asc");
        } else {
-         sortData(response.pokedata, e.target.id, "asc");
+         sortData(response.prices, e.target.id, "asc");
          e.target.setAttribute("data-dir", "desc");
        }
      });
@@ -190,10 +190,10 @@ async function loadCalendar() {
     const dt = new Date();
 
     if (nav !== 0) {
-        dt.setMonth(new Date().getMonth() + nav);
+        dt.setMonth(new Date().getMonth() + nav); // Set displayed month
     }
 
-    const day = dt.getDate();
+    const today = dt.getDate();
     const month = dt.getMonth();
     const year = dt.getFullYear();
 
@@ -224,15 +224,26 @@ async function loadCalendar() {
             daySquare.innerText = i - paddingDays;
             daySquare.setAttribute('data-day', dayString);
 
+            // Book days in past months/years
+            if (nav < 0) {
+              daySquare.classList.add('booked');
+            }
+
+            // Book days before today for current month
+            else if (nav === 0 && i - paddingDays < today) {
+              daySquare.classList.add('booked');
+            }
+
             // Highlight booked day
             if (bookedDates.includes(dayString)) {
-                daySquare.classList.add('highlighted');
+                daySquare.classList.add('booked');
             }
-
-            if (i - paddingDays === day && nav === 0) {
+            
+            // Mark current day
+            if (i - paddingDays === today && nav === 0) {
                 daySquare.id = 'currentDay';
             }
-
+            
             daySquare.addEventListener('click', () => toggleHighlight(dayString));
         } else {
             daySquare.classList.add('padding');
@@ -243,12 +254,12 @@ async function loadCalendar() {
 }
 
 // Toggle day highlight (for future payment methods)
-function toggleHighlight(dayString) {
-    const daySquare = document.querySelector(`.day[data-day='${dayString}']`);
-    if (daySquare) {
-        daySquare.classList.toggle('highlighted');
-    }
-}
+// function toggleHighlight(dayString) {
+//     const daySquare = document.querySelector(`.day[data-day='${dayString}']`);
+//       if (daySquare) {
+//         daySquare.classList.toggle('selected');
+//     }
+// }
 
 function initButtons() {
     document.getElementById('nextButton').addEventListener('click', () => {
@@ -267,11 +278,8 @@ loadCalendar();
 
 
 function summary() {
-    const allHighlightedDays = document.querySelectorAll('.day.highlighted');
-    allHighlightedDays.forEach(day => day.classList.remove('highlighted'));
-  
-    localStorage.removeItem('highlightedDays');
-
+    //const allSelectedDays = document.querySelectorAll('.day.selected');
+    //allSelectedDays.forEach(day => day.classList.remove('selected'));
     // TBD
 }
 

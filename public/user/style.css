@@ -545,14 +545,10 @@ body, html {
             flex-direction: column;
             justify-content: space-between;
         }
-        .day:hover {
-            background-color: #e8faed;
-        }
-          
         .day + #currentDay {
-            background-color:#e8f4fa;
+            background-color:#dff4ff;
         }
-        .day.highlighted {
+        .day.booked {
             background-color: rgb(153, 153, 153);
         }
         .event {
