@@ -50,6 +50,10 @@ body {
     justify-content: space-between;
 }
 
+.day:hover {
+    background-color: #e8faed;
+}
+
 .day.padding {
     background-color: lightgray;
     cursor: default;
@@ -59,11 +63,19 @@ body {
     background-color: rgb(153, 153, 153);
 }
 
+.day.booked:hover {
+    background-color: rgb(172, 141, 141);
+}
+
 .day.to-book {
     background-color: rgb(87, 168, 87);
 }
 
 .day.to-delete {
+    background-color: rgb(202, 107, 107);
+}
+
+.day.to-delete:hover {
     background-color: rgb(202, 107, 107);
 }
 

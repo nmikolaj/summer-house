@@ -1,8 +1,9 @@
-body, html {
+        body, html {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
         .navigation {
             display: flex;
@@ -15,7 +16,6 @@ body, html {
             font-size: 20px;
             padding: 10px 15px;
             text-decoration: none;
-            margin: 0 10px;
             transition: background-color 0.3s;
             align-items: center;
         }
@@ -113,6 +113,13 @@ body, html {
             color: black;
             background-color: #fcf6ef;
         }
+        @media (max-width: 1024px) {
+            /* Hide the gallery content*/
+            .gallery .content h2,
+            .gallery .content{
+                display: none;
+            }
+        }
         .booking {
             color: black;
             background-color: black;
@@ -204,7 +211,8 @@ body, html {
             font-size: 3em;
         }
         h3 {
-            font-size: 70px; 
+            font-size: 70px;
+            margin-top: 10px;
             margin-bottom: 0;
         }
         h4 {
@@ -226,17 +234,16 @@ body, html {
         }
         .offer h2 {
             font-size: 2em;
-            padding-top: 70px;
-            margin-top: 0;
+            margin-top: 40px;
             margin-left: 50px;
             margin-bottom: 0;
         }
         .steps h2 {
             color: white;
             font-size: 2.5em;
-            padding-top: 100px;
-            margin-top: 0;
+            margin-top: 90px;
             margin-left: 20px;
+            margin-bottom: 70px;
         }
         .pricelist h2 {
             text-align: center;
@@ -273,6 +280,7 @@ body, html {
         .offer p {
             font-size: 17px;
             margin-top: 10px;
+            margin-right: 0;
         }
         .pricelist p {
             font-size: 17px;
@@ -292,6 +300,9 @@ body, html {
             margin: 4px 2px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+        }
+        .steps .reserve-button, .pricelist .reserve-button {
+            margin: 24px 0;
         }
         .reserve-button:hover, .gallery-button:hover {
             background-color: #f99f33; 
@@ -348,8 +359,8 @@ body, html {
             color: white; 
         }
         .step-container {
-        flex-basis: 33%; 
-        margin: 0 0.5%;
+            flex-basis: 33%; 
+            margin: 0 0.5%;
         }
         .step-container p {
             font-size: 17px;
@@ -358,9 +369,12 @@ body, html {
             text-align: left;
         }
         .description-text p {
-            max-width: 80%;
+            width: 100%;
             font-size: 17px;
             margin-top: 10%;
+            margin-left: 0;
+            margin-right: 0;
+            text-align: center;
         }
         .offer-wrapper {
             display: flex;        
@@ -406,8 +420,7 @@ body, html {
         .table-container {
             margin: auto;
             max-width: 1200px;
-            width: 100%;
-            margin-bottom: 100px;
+            width: 85%;
         }
         table {
             border-collapse: collapse;
@@ -429,17 +442,17 @@ body, html {
         th button {
             background-color: #a7692b;
             border: none;
-            border-radius: 0px;
-            cursor: pointer;
-            display: block;
-            font: inherit;
-            height: 100%;
-            margin: 0;
-            min-width: max-content;
             padding: 8px 16px;
-            position: relative;
-            text-align: center;
+            font-size: 1rem;
             width: 100%;
+            text-align: center;
+            white-space: nowrap;
+        }
+        @media (max-width: 768px) {
+            th button {
+                padding: 5px 10px;
+                font-size: 0.8rem;
+            }
         }
         th button::after {
             position: absolute;
@@ -515,7 +528,8 @@ body, html {
             background-color:rgb(216, 109, 8)
         }
         #container {
-            width: 770px;
+            width: 100%;
+            max-width: 770px;
         }
         #weekdays {
             width: 100%;
