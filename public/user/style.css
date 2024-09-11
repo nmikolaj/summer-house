@@ -116,15 +116,36 @@
         @media (max-width: 1024px) {
             /* Hide the gallery content*/
             .gallery .content h2,
-            .gallery .content{
+            .gallery .content p {
                 display: none;
+            }
+            .gallery .content {
+                flex-basis: 0;
+            }
+            .slider {
+                position: relative;
+            }
+            .gallery-button {
+                position: absolute; 
+                top: 70%;
+                left: 50%;
+                transform: translate(-50%, -50%); 
+                z-index: 1;
+                padding: 15px 30px;
+                background-color: #cb853f;
+                color: white;
+                box-shadow: 1px 2px 6px #2c2a2a;
+                font-size: 1rem;
+                text-align: center;
+                text-decoration: none;
+                cursor: pointer;
             }
         }
         .booking {
             color: black;
             background-color: black;
             align-items: flex-start;
-            height: 120vh;
+            height: auto;
         } 
         .contact {
             color: white;
@@ -235,8 +256,12 @@
         .offer h2 {
             font-size: 2em;
             margin-top: 40px;
-            margin-left: 50px;
             margin-bottom: 0;
+        }
+        @media (max-width: 600px) {
+            .offer h2 {
+                font-size: 1.5em;
+            }
         }
         .steps h2 {
             color: white;
@@ -259,7 +284,7 @@
             font-size: 2.75em;
             margin-right: auto;
             margin-left: auto;
-            margin-top: 100px;
+            margin-top: 70px;
             padding-left: 100px;
             padding-right: 100px;
             padding-bottom: 5px;
@@ -280,7 +305,14 @@
         .offer p {
             font-size: 17px;
             margin-top: 10px;
+            margin-left: 60px;
             margin-right: 0;
+        }
+        @media (max-width: 600px) {
+            .offer p {
+                font-size: 16px;
+                margin-left: 35px;
+            }
         }
         .pricelist p {
             font-size: 17px;
@@ -302,7 +334,7 @@
             transition: background-color 0.3s ease;
         }
         .steps .reserve-button, .pricelist .reserve-button {
-            margin: 24px 0;
+            margin: 34px auto;
         }
         .reserve-button:hover, .gallery-button:hover {
             background-color: #f99f33; 
@@ -321,6 +353,7 @@
         }
         #summaryButton {
             margin-top: 40px;
+            margin-bottom: 60px;
             padding-right: 50px;
             padding-left: 30px;
             position: relative;
@@ -368,10 +401,14 @@
             margin-right: 10px;
             text-align: left;
         }
+        .description-text {
+            width: 100%;
+        }
         .description-text p {
             width: 100%;
             font-size: 17px;
             margin-top: 10%;
+            margin-bottom: 2%;
             margin-left: 0;
             margin-right: 0;
             text-align: center;
@@ -380,7 +417,13 @@
             display: flex;        
             flex-direction: column;
             align-items: flex-start;
+            padding-left: 50px;
         }
+        @media (max-width: 600px) {
+            .offer-wrapper {
+                padding-left: 15px;
+            }
+        }        
         .slider {
             overflow: hidden;
             width: 100%;
@@ -441,12 +484,14 @@
         }
         th button {
             background-color: #a7692b;
+            border-radius: 0px;
+            position: relative;
             border: none;
             padding: 8px 16px;
             font-size: 1rem;
             width: 100%;
+            height: 100%;
             text-align: center;
-            white-space: nowrap;
         }
         @media (max-width: 768px) {
             th button {
@@ -484,14 +529,12 @@
             .steps-wrapper {
                 flex-direction: column;
             }
-
         .step-container {
             flex-basis: auto;
             width: 100%; 
             margin: 10px 0;
             }
         }
-
         @keyframes slider {
             0%, 13%, 100% {
               transform: translateX(0);
@@ -530,15 +573,17 @@
         #container {
             width: 100%;
             max-width: 770px;
+            box-sizing: border-box; /* Padding/margins calculated within the container’s width */
+            padding: 0 20px;
         }
         #weekdays {
             width: 100%;
             display: flex;
-            color: #247BA0;
+            color: #3d5863;
         }
         #weekdays div {
-            width: 100px;
-            padding: 10px;
+            width: 12.987%;
+            padding: 5px;
         }
         #calendar {
             width: 100%;
@@ -547,23 +592,61 @@
             flex-wrap: wrap;
         }
         .day {
-            width: 100px;
-            padding: 10px;
-            height: 100px;
+            width: 12.987%;
+            padding: 12px;
+            height: 90px;
             cursor: pointer;
             box-sizing: border-box;
             background-color: white;
-            margin: 5px;
+            margin: 0.648%;
             box-shadow: 0px 0px 3px #CBD4C2;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            text-align: start;
+        }
+        @media (max-width: 1024px) {
+            .day {
+                height: 80px;
+            }
+            #weekdays div {
+                font-size: 0.9rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .day {
+                height: 70px;
+            }
+            #weekdays div {
+                font-size: 0.8rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .day {
+                height: 60px;
+            }
+            #weekdays div {
+                font-size: 0.7rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .day {
+                height: 50px;
+            }
+            #weekdays div {
+                font-size: 0.6rem;
+            }
+            .booking h2 {
+                padding-left: 40px;
+                padding-right: 40px;
+            }
         }
         .day + #currentDay {
             background-color:#dff4ff;
         }
         .day.booked {
-            background-color: rgb(153, 153, 153);
+            background-color: rgb(186, 186, 186);
+            color: #7a7a7a
         }
         .event {
             font-size: 10px;
