@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 section.style.backgroundColor = 'transparent';
             });
 
-            navigationBar.style.backgroundColor = 'transparent';
+            navigationBar.style.backgroundColor = '#00000080';
             navigationBar.style.color = 'white';
             
             navLinks.forEach(function(link) {
