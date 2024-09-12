@@ -244,7 +244,7 @@ async function loadCalendar() {
                 daySquare.id = 'currentDay';
             }
             
-            daySquare.addEventListener('click', () => toggleHighlight(dayString));
+            //daySquare.addEventListener('click', () => toggleHighlight(dayString));
         } else {
             daySquare.classList.add('padding');
         }
