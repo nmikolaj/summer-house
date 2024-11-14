@@ -13,7 +13,11 @@ A responsive website for managing and booking a summer house, built with vanilla
 ## Screenshots
 
 
-| <img width="290" alt="user_mobile" src="https://github.com/user-attachments/assets/36f4dc0d-3e3e-4686-b9a8-e537606c3587"> | <img width="600" alt="admin_panel" src="https://github.com/user-attachments/assets/308149e8-65be-43cd-b8c0-d5206aa85e06"> |
+| <img width="900" alt="user_desktop_main_page" src="https://github.com/user-attachments/assets/902c3ec2-a0f8-456d-9884-ba0c419efc7b"> |
+|:---------------------------------------:|
+| User's Home Screen (Desktop)              |
+
+| <img width="286" alt="user_mobile" src="https://github.com/user-attachments/assets/36f4dc0d-3e3e-4686-b9a8-e537606c3587"> | <img width="587" alt="admin_panel" src="https://github.com/user-attachments/assets/308149e8-65be-43cd-b8c0-d5206aa85e06"> |
 |:---------------------------------------:|:---------------------------------------:|
 | User's Calendar (Mobile)                | Admin Panel                          |
 
